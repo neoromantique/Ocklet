@@ -12,15 +12,13 @@
 
 <body>
   <div class=page>
-    <h1>Photos: /{{ path }}</h1>
-    <div class=metanav>
-    </div>
+    <h2>Photos: /{{ path }}</h2>
     {% if up %}
-    <a href='{{ up }}'>../</a>
+      <a href='{{ up }}'>../</a>
     {% endif %}
 
     {% for entry in dir_entries %}
-    <a href='{{ path }}/{{ entry }}'>{{ entry }}</a>
+      <a href='{{ path }}/{{ entry }}'>{{ entry }}</a>
     {% endfor %}
     <div class=pics id=pics>
       {% for entry in image_entries %}
