@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if up %}
+<a href='{{ up }}'>../</a>
+{% endif %}
+
+{% for entry in dir_entries %}
+<a href='{{ path }}/{{ entry }}'>{{ entry }}</a>
+{% endfor %}
+<div class=pics id=pics>
+  {% for entry in image_entries %}
+  <a class=pic data-fancybox="gallery" href='/static/images/{{ path }}/{{ entry [0] }}'><img
+      src='/static/images/{{ path }}/.thumbnail/{{ entry [1] }}'></a>
+  {% else %}
+  <em>No image files</em>
+  {% endfor %}
+</div>
+{% endblock %}
