@@ -12,7 +12,7 @@ Features:
 Setup
 -----
 
-Requirements: ```flask, jpeg, pillow, ffmpeg```
+Requirements: ```flask, pillow, ffmpeg```
 
 Set PHOTO_DIR in main.py
 
