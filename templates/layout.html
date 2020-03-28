@@ -18,7 +18,12 @@
     {% endif %}
 
     {% for entry in dir_entries %}
-      <a href='{{ path }}/{{ entry }}'>{{ entry }}</a>
+      {% if path %}
+        <a href='/{{ path }}/{{ entry }}'>{{ entry }}</a>
+      {% else %}
+        <a href='{{ entry }}'>{{ entry }}</a>
+      {% endif %}
+
     {% endfor %}
     <div class=pics id=pics>
       {% for entry in image_entries %}
