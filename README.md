@@ -12,13 +12,13 @@ Features:
 Setup
 -----
 
-Requirements: ```flask, jpeg, pillow, ffmpeg```
+Requirements: ```flask, pillow, ffmpeg```
 
 Set PHOTO_DIR in main.py
 
 Symlink 'images' in static directory to PHOTO_DIR, e.g.
 ```
-ln -s /home/david/Pictures/ images
+ln -s /home/david/Pictures/ static/images
 ```
 
 Run
