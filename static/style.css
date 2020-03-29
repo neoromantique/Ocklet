@@ -8,7 +8,7 @@ img                  { max-height: 120px; max-width: 120px;}
 #pics                { margin-top: 20px;}
 
 .img-wrapper         { display: inline-block; width: 140px; height: 140px; overflow:hidden; background-size: cover; background-position: center;}
-.img-wrapper:hover   { background-size: cover;}
+.img-wrapper:hover   { background-size: auto;}
 
 .page                { width: 100%; background: white; }
 .entries             { width: 90%; margin: 0; padding: 0; }
