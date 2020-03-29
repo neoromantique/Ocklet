@@ -18,7 +18,7 @@ app.config.update(dict(
     # served:
     # ln -s /home/david/Pictures/ images
     PHOTO_DIR='/home/david/Pictures',
-    THUMB_SIZE=(128, 128)
+    THUMB_SIZE=(256, 256)
 ))
 
 
@@ -66,7 +66,7 @@ def photo_dir(path):
                                       '-vframes', '1', str(Path(thumb).parent) + '/' + thumbjpg])
                 image_entries.append([list_item, thumbjpg])
 
-        return render_template('layout.html', dir_entries=dir_entries, image_entries=image_entries, path=path, up=up)
+        return render_template('layout.html', dir_entries=dir_entries, image_entries=image_entries, path=path, up=up, base=request.url_root)
 
 if __name__ == '__main__':
     app.run()

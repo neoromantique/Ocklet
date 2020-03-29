@@ -4,8 +4,10 @@ h1, h2          { font-family: 'Georgia', serif; margin: 0; }
 h1              { border-bottom: 2px solid #fff; }
 h2              { font-size: 1.2em; }
 
-img             {max-height: 120px; max-width: 120px;}
+img             { max-height: 120px; max-width: 120px;}
 #pics           { margin-top: 20px;}
+
+.img-wrapper    { display: inline-block; width: 150px; height: 150px; overflow:hidden; background-size: cover; background-position: center;}
 
 .page           { width: 100%; background: white; }
 .entries        { width: 90%; margin: 0; padding: 0; }
