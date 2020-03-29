@@ -65,7 +65,8 @@ def photo_dir(path):
                                      "[0:v][1:v] overlay=25:25:enable='between(t,0,20)'", '-ss', '00:00:00.000',
                                       '-vframes', '1', str(Path(thumb).parent) + '/' + thumbjpg])
                 image_entries.append([list_item, thumbjpg])
-        return render_template('photo_dir.html', dir_entries=dir_entries, image_entries=image_entries, path=path, up=up)
+
+        return render_template('layout.html', dir_entries=dir_entries, image_entries=image_entries, path=path, up=up)
 
 if __name__ == '__main__':
     app.run()
