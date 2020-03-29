@@ -2,9 +2,10 @@ from flask import Flask, request, session, g, redirect, url_for, \
     abort, render_template, flash
 from contextlib import closing
 
-from os import listdir, mkdir, symlink
+from os import listdir, mkdir, symlink, _exit
 from os.path import isdir, join, dirname, exists, splitext
 from PIL import Image
+
 
 import subprocess
 from pathlib import Path
@@ -21,7 +22,9 @@ app.config.update(dict(
     THUMB_SIZE=(256, 256)
 ))
 
-
+@app.route('/restart', defaults={'path': ''})
+def restart(path):
+    _exit(11)
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def photo_dir(path):
