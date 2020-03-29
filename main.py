@@ -61,8 +61,7 @@ def photo_dir(path):
                 thumb = join(thumb_dir, list_item)
                 thumbjpg = Path(thumb).stem + '.jpg'
                 if not exists(str(Path(thumb).parent) + '/' + thumbjpg):
-                    subprocess.call(['ffmpeg', '-i', join(nav, list_item), '-i', "play.png", "-filter_complex",
-                                     "[0:v][1:v] overlay=25:25:enable='between(t,0,20)'", '-ss', '00:00:00.000',
+                    subprocess.call(['ffmpeg', '-i', join(nav, list_item), '-ss', '00:00:00.000',
                                       '-vframes', '1', str(Path(thumb).parent) + '/' + thumbjpg])
                 image_entries.append([list_item, thumbjpg])
 
