@@ -13,7 +13,7 @@ from pathlib import Path
 app = Flask(__name__)
 
 app.config.update(dict(
-    DEBUG=True,
+    DEBUG=False,
     SECRET_KEY='SECRET',
     # PHOTO_DIR needs to be symlinked from 'static/images' to allow files to be
     # served:
@@ -71,4 +71,4 @@ def photo_dir(path):
         return render_template('layout.html', dir_entries=dir_entries, image_entries=image_entries, path=path, up=up, base=request.url_root)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
