@@ -2,7 +2,7 @@ from flask import Flask, request, session, g, redirect, url_for, \
     abort, render_template, flash
 from contextlib import closing
 
-from os import listdir, mkdir, symlink, _exit
+from os import listdir, mkdir, symlink, _exit, environ
 from os.path import isdir, join, dirname, exists, splitext
 from PIL import Image
 
@@ -10,15 +10,23 @@ from PIL import Image
 import subprocess
 from pathlib import Path
 
+debug = False
+proto = 'https'
+
+if (environ.get('ENV') == "development"):
+    proto = 'http'
+    debug = True
+
 app = Flask(__name__)
 
 app.config.update(dict(
-    DEBUG=False,
+    DEBUG=debug,
     SECRET_KEY='SECRET',
     # PHOTO_DIR needs to be symlinked from 'static/images' to allow files to be
     # served:
     # ln -s /home/david/Pictures/ images
     PHOTO_DIR='/home/david/Pictures',
+    FQDN=environ.get('DOMAIN'),
     THUMB_SIZE=(256, 256)
 ))
 
@@ -68,7 +76,7 @@ def photo_dir(path):
                                       '-vframes', '1', str(Path(thumb).parent) + '/' + thumbjpg])
                 image_entries.append([list_item, thumbjpg])
 
-        return render_template('layout.html', dir_entries=dir_entries, image_entries=image_entries, path=path, up=up, base=request.url_root)
+        return render_template('layout.html', dir_entries=dir_entries, image_entries=image_entries, path=path, up=up, proto=proto, base=app.config['FQDN'])
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

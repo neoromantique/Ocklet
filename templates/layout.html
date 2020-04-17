@@ -27,7 +27,7 @@
     <div class=pics id=pics>
       {% for entry in image_entries %}
       <a class=pic data-fancybox="gallery" href='/static/images/{{ path }}/{{ entry [0] }}'>
-      <div class=img-wrapper style="background-image: url('{{base}}static/images/{{ path }}/.thumbnail/{{ entry [1] }}')";></div></a>
+      <div class=img-wrapper style="background-image: url('{{proto}}://{{base}}/static/images/{{ path }}/.thumbnail/{{ entry [1] }}')";></div></a>
       {% else %}
       <em>No image files</em>
       {% endfor %}
