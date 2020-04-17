@@ -67,7 +67,7 @@ def photo_dir(path):
                     im.save(str(Path(thumb).parent) + '/' + thumbjpg, "JPEG")
                 image_entries.append([list_item, thumbjpg])
 
-            elif list_item.endswith('.mp4') or list_item.endswith('.webp'):
+            elif list_item.endswith('.mp4') or list_item.endswith('.webp') or list_item.endswith('.gif'):
                 # Generate missing thumbnails 
                 thumb = join(thumb_dir, list_item)
                 thumbjpg = Path(thumb).stem + '.jpg'
