@@ -23,10 +23,7 @@ app = Flask(__name__)
 app.config.update(dict(
     DEBUG=debug,
     SECRET_KEY='SECRET',
-    # PHOTO_DIR needs to be symlinked from 'static/images' to allow files to be
-    # served:
-    # ln -s /home/david/Pictures/ images
-    PHOTO_DIR='/home/david/Pictures',
+    PHOTO_DIR='/share/Images',
     FQDN=environ.get('DOMAIN'),
     THUMB_SIZE=(256, 256)
 ))
