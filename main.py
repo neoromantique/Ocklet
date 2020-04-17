@@ -23,7 +23,7 @@ app = Flask(__name__)
 app.config.update(dict(
     DEBUG=debug,
     SECRET_KEY='SECRET',
-    PHOTO_DIR='/share/Images',
+    PHOTO_DIR='/home/david/Pictures',
     FQDN=environ.get('DOMAIN'),
     THUMB_SIZE=(256, 256)
 ))
