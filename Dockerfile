@@ -3,7 +3,7 @@ FROM frolvlad/alpine-python3:latest
 
 RUN apk update
 
-RUN apk add build-base python3-dev py-pip jpeg-dev zlib-dev ffmpeg
+RUN apk add build-base python3-dev py-pip jpeg-dev zlib-dev ffmpeg libwebp libwebp-dev
 ENV LIBRARY_PATH=/lib:/usr/lib
 
 WORKDIR /app
